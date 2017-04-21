@@ -72,58 +72,105 @@
 							</summary>
 							Im folgenden werden die wichtigsten <br>
 							Eigenschaften der Reellen Zahlen (&Ropf;) Definiert <br>
-							<details>
+							<details style="text-indent:5px;">
 								<summary>Die Grundrechenarten</summary>
 								Es gibt in &Ropf; zwei bin&auml;re Operationen<br>
 								<div style="text-indent:10px;">+ "plus" und<br></div>
 								<div style="text-indent:10px;">* "mal"<br></div>
-								die folgende Eigenschaften erf&uuml;llen:<br>
-								Seien a,b,c,d &isin; &Ropf;
+								<div style="text-indent:5px;">die folgende Eigenschaften erf&uuml;llen:<br></div>
+								<div style="text-indent:5px;">Seien a,b,c,d &isin; &Ropf;</div>
 								<details style="text-indent:10px;">
-									<summary>Abgeschlossenheit</summary>
-									<div style="text-indent:20px;">a + b &isin; &Ropf;</div>
-									<div style="text-indent:20px;">a * b &isin; &Ropf;</div>
+									<summary>Die Grundrechenregeln</summary>
+									<details style="text-indent:10px;">
+										<summary>Abgeschlossenheit</summary>
+										<div style="text-indent:20px;">a + b &isin; &Ropf;</div>
+										<div style="text-indent:20px;">a * b &isin; &Ropf;</div>
+									</details>
+									<details style="text-indent:10px;">
+										<summary>Kommutativit&auml;t</summary>
+										<div style="text-indent:20px;">a + b = b + a </div>
+										<div style="text-indent:20px;">a * b = b * a </div>
+									</details>
+									<details style="text-indent:10px;">
+										<summary>Assoziativit&auml;t</summary>
+										<div style="text-indent:20px;">a + (b + c) = (a + b) + c</div>
+										<div style="text-indent:20px;">a(bc)=(ab)c</div>
+										<br>
+										<div style="text-indent:20px;">Deshalb l&auml;sst man solche Klammern </div>
+										<div style="text-indent:20px;">im Allgemeinen weg und l&auml;sst</div>
+										<div style="text-indent:20px;">den Malpunkt "*" weg.</div>
+									</details>
+									<details style="text-indent:10px;">
+										<summary>Neutrale Elemente</summary>
+										<div style="text-indent:20px;">Beide Operationen besitzen ein neutrales Element</div>
+										<div style="text-indent:20px;">0 bzw 1</div>
+										<div style="text-indent:20px;">a + 0 = a und</div>
+										<div style="text-indent:20px;">a * 1 = a</div>
+										
+									</details>
+									<details style="text-indent:10px;">
+										<summary>Inverse Elemente</summary>
+										<div style="text-indent:20px;">beide Operationen sind umkehrbar</div>
+										<div style="text-indent:20px;">im folgenden Sinne:</div>
+										<div style="text-indent:30px;">f&uuml;r a &isin; &Ropf; &exist; -a &isin; &Ropf; sodass a + (-a) = 0 </div>
+										<div style="text-indent:30px;">dann definiert man die Differenz:</div>
+										<div style="text-indent:30px;">a - b := a + (-b)</div>
+										<div style="text-indent:20px;">Au&szlig;erdem:</div>
+										<div style="text-indent:30px;">f&uuml;r a &isin; &Ropf;, a &ne; 0 &exist; \(\frac{1}{a}\) (=\(a^{-1}\)) mit</div>
+										<div style="text-indent:30px;">\(a*\frac{1}{a}= 1\) </div>
+										<div style="text-indent:30px;">dann definiere man den Quotionten</div>
+										<div style="text-indent:30px;">\(\frac{a}{b}:= a*\frac{1}{b}\) &emsp; für b &ne; 0 </div>
+									</details>
+									<details style="text-indent:10px;">
+										<summary>Distributivgesetz</summary>
+										<div style="text-indent:20px;">a * (b + c) = (a * b) + (a * c)</div>
+										<div style="text-indent:91px;">= ab + ac</div>
+										<div style="text-indent:20px;">"Punkt vor Strich"</div>
+									</details>
+								</details>
+								<div style="text-indent:5px;">Aus diesen Grundregeln lassen sich weitere<br></div>
+								<div style="text-indent:5px;">Regeln ableiten<br></div>
+								<details style="text-indent:10px;">
+									<summary>Bruchrechenregeln:</summary>
+									<div style="text-indent:20px;">\(\frac{a}{b} + \frac{c}{d} = \frac{ad+bc}{bd}\) (b,d &ne; 0)<br></div>
+									<div style="text-indent:20px;">\(\frac{a}{b} * \frac{c}{d} = \frac{ac}{bd}\); \(\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{bc}\) (b,d,c &ne; 0)<br></div>
 								</details>
 								<details style="text-indent:10px;">
-									<summary>Kommutativit&auml;t</summary>
-									<div style="text-indent:20px;">a + b = b + a </div>
-									<div style="text-indent:20px;">a * b = b * a </div>
+									<summary>Vorzeichenregeln:</summary>
+									<div style="text-indent:20px;">\( (-a)b = a(-b) = -ab \)<br></div>
+									<div style="text-indent:20px;">\( (-a)*(-b) = ab \)<br></div>
 								</details>
 								<details style="text-indent:10px;">
-									<summary>Assoziativit&auml;t</summary>
-									<div style="text-indent:20px;">a + (b + c) = (a + b) + c</div>
-									<div style="text-indent:20px;">a(bc)=(ab)c</div>
-									<br>
-									<div style="text-indent:20px;">Deshalb l&auml;sst man solche Klammern </div>
-									<div style="text-indent:20px;">im Allgemeinen weg und l&auml;sst</div>
-									<div style="text-indent:20px;">den Malpunkt "*" weg.</div>
+									<summary>Erweitern/Kürzen</summary>
+									<div style="text-indent:20px;">\( \frac{ac}{bc} = \frac{a}{b} \) (b,c &ne; 0)<br></div>
 								</details>
 								<details style="text-indent:10px;">
-									<summary>Neutrale Elemente</summary>
-									<div style="text-indent:20px;">Beide Operationen besitzen ein neutrales Element</div>
-									<div style="text-indent:20px;">0 bzw 1</div>
-									<div style="text-indent:20px;">a + 0 = a und</div>
-									<div style="text-indent:20px;">a * 1 = a</div>
-									
-								</details>
-								<details style="text-indent:10px;">
-									<summary>Inverse Elemente</summary>
-									<div style="text-indent:20px;">beide Operationen sind umkehrbar</div>
-									<div style="text-indent:20px;">im folgenden Sinne:</div>
-									<div style="text-indent:30px;">f&uuml;r a &isin; &Ropf; &exist; -a &isin; &Ropf; sodass a + (-a) = 0 </div>
-									<div style="text-indent:30px;">dann definiert man die Differenz:</div>
-									<div style="text-indent:30px;">a - b := a + (-b)</div>
-									<div style="text-indent:20px;">Au&szlig;erdem:</div>
-									<div style="text-indent:30px;">f&uuml;r a &isin; &Ropf;, a &ne; 0 &exist; \(\frac{1}{a}\) (=\(a^{-1}\)) mit</div>
-									<div style="text-indent:30px;">\(a*\frac{1}{a}= 1\) </div>
-								</details>
-								<details style="text-indent:10px;">
-									<summary>Distributivgesetz</summary>
-									
-								</details>
+									<summary>Nullprodukt</summary>
+									<div style="text-indent:20px;"> ab = 0  &hArr;<br></div>
+									<div style="text-indent:20px;"> a = 0 oder b = 0<br></div>
+								</details><!-- 10px -->
 							</details>
-							
-						</details>
+							<details>
+								<summary>Ungleichungen</summary>
+								Die reellen Zahlen sind ungeordnet, in dem Sinne, <br>
+								dass es eine "&lt;" (kleiner) Relation gibt, <br>
+								die folgende Eigenschaften besitzt:<br>
+								seien a,b,c &isin; &Ropf;
+								<details style="text-indent:10px;">
+									<summary>Trichotomie</summary>
+									<div style="text-indent:10px;">Es gilt genau eine der Eigenschaften</div>
+									<div style="text-indent:10px;">a &lt; b, a = b, a &gt; b</div>
+								</details>
+								<details style="text-indent:10px;">
+									<summary>Transitivit&auml;t</summary>
+									
+								</details>
+								<details style="text-indent:10px;">
+									<summary></summary>
+								</details>
+								
+							</details><!-- 0px -->
+						</details><!-- Paragraf -->
 					</td>
 				</tr>
 			</table>
@@ -143,21 +190,20 @@
 				Beispiele - Paragraf 1
 			</summary>
 			<details>
-			<summary>i</summary>
-			<img id="B1" src="http://imgur.com/115wstE.png">
+				<summary>i</summary>
+				<img id="B1" src="http://imgur.com/115wstE.png">
 			</details>
 			<details>
-			<summary>ii</summary>
-			<img id="B2" src="http://i.imgur.com/nTvTFUs.png">
+				<summary>ii</summary>
+				<img id="B2" src="http://i.imgur.com/nTvTFUs.png">
 			</details>
 			<details>
-			<summary>iii</summary>
-			<img id="B3" src="http://i.imgur.com/VRewupo.png">
+				<summary>iii</summary>
+				<img id="B3" src="http://i.imgur.com/VRewupo.png">
 			</details>
 			<details>
-			<summary><em>Bemerkung</em></summary>
-			<img id="B4" src="">
-			
+				<summary><em>Bemerkung</em></summary>
+				<img id="B4" src="">
 			</details>
 		</details>
 		<p>
