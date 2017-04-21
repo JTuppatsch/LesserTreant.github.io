@@ -1,7 +1,19 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Analysis</title>
 		<link rel="icon" href="file:///C:/Users/Johnas/Desktop/Tree.png">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/x-mathjax-config">
+		  MathJax.Hub.Config({
+			extensions: ["tex2jax.js"],
+			jax: ["input/TeX","output/HTML-CSS"],
+			tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+		  });
+		</script>
+		<script type="text/javascript" src="https://LesserTreant.github.io/MathJax-master/MathJax.js"></script>
 	</head>
 	<body>
 		<script>
@@ -102,7 +114,8 @@
 									<div style="text-indent:30px;">dann definiert man die Differenz:</div>
 									<div style="text-indent:30px;">a - b := a + (-b)</div>
 									<div style="text-indent:20px;">Au&szlig;erdem:</div>
-									<div style="text-indent:30px;">f&uuml;r a &isin; &Ropf;, a &ne; 0 &exist;</div>
+									<div style="text-indent:30px;">f&uuml;r a &isin; &Ropf;, a &ne; 0 &exist; \(\frac{1}{a}\) (=\(a^{-1}\)) mit</div>
+									<div style="text-indent:30px;">\(a*\frac{1}{a}= 1\) </div>
 								</details>
 								<details style="text-indent:10px;">
 									<summary>Distributivgesetz</summary>
@@ -115,41 +128,7 @@
 				</tr>
 			</table>
 		</p>
-		<script>
-			/*
-			var i = 1, Para = true;
-			while(Para == true){
-				if (document.getElementById("Par"+(i+1)) == null){
-					Para = false;
-				}
-				document.getElementById("Par"+i).style.cssFloat="right";
-				i++
-			}
-			/*
-			var Titel, inhalt, Kap_Name,
-			closing = ""; //" <em onclick='Close(Kap_Name)'>close</em>";
-			function Inhalt(Kapitel, Paragraf){
-				if(Kapitel == 1){
-					if (Paragraf == 1 && document.getElementById("Kap1Det").open === false){
-						Kap_Name = "Kap1Det";
-						Titel = "<summary onclick='Inhalt(1, 1)'>Das Prinzip der vollstaendigen Induktion</summary>",
-						inhalt = "";
-						document.getElementById(Kap_Name).innerHTML = Titel + inhalt;
-						Open(Kap_Name);
-					} else if (Paragraf == 1 && document.getElementById("Kap1Det").open === true){
-						//console.log("hi");
-					}
-				}
-			}
-			
-			function Open(Kap){
-				document.getElementById(Kap).open = true;
-			}
-			
-			function Close(Kap){
-				document.getElementById(Kap).open = false;
-			} */
-			
+		<script>			
 			function Bsp(Par){
 				var Beispiel = document.getElementById("Beispiel_"+Par)
 				if (Beispiel.hidden == true){
@@ -178,8 +157,14 @@
 			<details>
 			<summary><em>Bemerkung</em></summary>
 			<img id="B4" src="">
+			
 			</details>
 		</details>
-		<p></p>
+		<p>
+		$x < y$ <br>
+		\( (1+x)^2\) <br>
+		\( \sqrt{3x-1} \) <br>
+		\(x^2 + y^2 = z^2\)
+		</p>
 	</body>
 </html>
