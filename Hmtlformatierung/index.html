@@ -134,9 +134,10 @@
 	
 	function Kapitel(Nummer){
 		Kap = "Kap" + Nummer;
+		console.log("hi")
 		$(document).ready(function(){
-			$("KapName").load(Kap+"/Name.txt");
-			$("KapInhalt").load(Kap+"/UnderName.txt");
+			$("#KapName").load(Kap+"/Name.txt");
+			$("#KapInhalt").load(Kap+"/UnderName.txt");
 		});
 	}
 	//document.body.onresize = "breaksc()";
