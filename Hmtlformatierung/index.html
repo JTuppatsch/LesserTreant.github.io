@@ -1,213 +1,128 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Analysis</title>
-		<link rel="icon" href="file:///C:/Users/Johnas/Desktop/Tree.png">
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/x-mathjax-config">
-		  MathJax.Hub.Config({
-			extensions: ["tex2jax.js"],
-			jax: ["input/TeX","output/HTML-CSS"],
-			tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
-		  });
-		</script>
-		<script type="text/javascript" src="https://LesserTreant.github.io/MathJax-master/MathJax.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	</head>
-	<body>
-		<script>
-		document.body.style.backgroundColor = "#F5F5DC";
-		</script>
-		<p id="knöpfe" hidden>
-			<button onclick="Setup()"
-					id="Startbutton">Starte ins Abenteuer!</button>
-			oder
-			<button onclick="newChar()"
-					id="key">Neuer Char</button>
-			</p>
-			
-		<p>
-			<table id="kapitel" bgColor="#F5DEB3">
-				<tr>
-					Analysis 1 f&uuml;r Informatiker und Ingenieure
-				</tr>
-				<tr>
-					<td>
-						Kapitel I -
-					</td>
-					<td>
-						Induktion, Zahlen und elementare Funktionen
-					</td>
-				</tr>
-				<tr>
-					<td style="float: right;">
-					&sect;I:
-					</td>
-					<td>
-						<div id="div1"></div>
-						<script>
-						$(document).ready(function(){
-							$("#div1").load("Kapitel/Kap1/Kap1.txt");
-						});
-						</script>
-					</td>
-				</tr>
-				<tr>
-					<td style="float: right;">
-					&sect;II:
-					</td>
-					<td>
-						<details>
-							<summary>
-								Das Rechnen mit Reellen Zahlen
-							</summary>
-							Im folgenden werden die wichtigsten <br>
-							Eigenschaften der Reellen Zahlen (&Ropf;) Definiert <br>
-							<details style="text-indent:5px;">
-								<summary>Die Grundrechenarten</summary>
-								Es gibt in &Ropf; zwei bin&auml;re Operationen<br>
-								<div style="text-indent:10px;">+ "plus" und<br></div>
-								<div style="text-indent:10px;">* "mal"<br></div>
-								<div style="text-indent:5px;">die folgende Eigenschaften erf&uuml;llen:<br></div>
-								<div style="text-indent:5px;">Seien a,b,c,d &isin; &Ropf;</div>
-								<details style="text-indent:10px;">
-									<summary>Die Grundrechenregeln</summary>
-									<details style="text-indent:10px;">
-										<summary>Abgeschlossenheit</summary>
-										<div style="text-indent:20px;">a + b &isin; &Ropf;</div>
-										<div style="text-indent:20px;">a * b &isin; &Ropf;</div>
-									</details>
-									<details style="text-indent:10px;">
-										<summary>Kommutativit&auml;t</summary>
-										<div style="text-indent:20px;">a + b = b + a </div>
-										<div style="text-indent:20px;">a * b = b * a </div>
-									</details>
-									<details style="text-indent:10px;">
-										<summary>Assoziativit&auml;t</summary>
-										<div style="text-indent:20px;">a + (b + c) = (a + b) + c</div>
-										<div style="text-indent:20px;">a(bc)=(ab)c</div>
-										<br>
-										<div style="text-indent:20px;">Deshalb l&auml;sst man solche Klammern </div>
-										<div style="text-indent:20px;">im Allgemeinen weg und l&auml;sst</div>
-										<div style="text-indent:20px;">den Malpunkt "*" weg.</div>
-									</details>
-									<details style="text-indent:10px;">
-										<summary>Neutrale Elemente</summary>
-										<div style="text-indent:20px;">Beide Operationen besitzen ein neutrales Element</div>
-										<div style="text-indent:20px;">0 bzw 1</div>
-										<div style="text-indent:20px;">a + 0 = a und</div>
-										<div style="text-indent:20px;">a * 1 = a</div>
-										
-									</details>
-									<details style="text-indent:10px;">
-										<summary>Inverse Elemente</summary>
-										<div style="text-indent:20px;">beide Operationen sind umkehrbar</div>
-										<div style="text-indent:20px;">im folgenden Sinne:</div>
-										<div style="text-indent:30px;">f&uuml;r a &isin; &Ropf; &exist; -a &isin; &Ropf; sodass a + (-a) = 0 </div>
-										<div style="text-indent:30px;">dann definiert man die Differenz:</div>
-										<div style="text-indent:30px;">a - b := a + (-b)</div>
-										<div style="text-indent:20px;">Au&szlig;erdem:</div>
-										<div style="text-indent:30px;">f&uuml;r a &isin; &Ropf;, a &ne; 0 &exist; \(\frac{1}{a}\) (=\(a^{-1}\)) mit</div>
-										<div style="text-indent:30px;">\(a*\frac{1}{a}= 1\) </div>
-										<div style="text-indent:30px;">dann definiere man den Quotionten</div>
-										<div style="text-indent:30px;">\(\frac{a}{b}:= a*\frac{1}{b}\) &emsp; für b &ne; 0 </div>
-									</details>
-									<details style="text-indent:10px;">
-										<summary>Distributivgesetz</summary>
-										<div style="text-indent:20px;">a * (b + c) = (a * b) + (a * c)</div>
-										<div style="text-indent:91px;">= ab + ac</div>
-										<div style="text-indent:20px;">"Punkt vor Strich"</div>
-									</details>
-								</details>
-								<div style="text-indent:5px;">Aus diesen Grundregeln lassen sich weitere<br></div>
-								<div style="text-indent:5px;">Regeln ableiten<br></div>
-								<details style="text-indent:10px;">
-									<summary>Bruchrechenregeln:</summary>
-									<div style="text-indent:20px;">\(\frac{a}{b} + \frac{c}{d} = \frac{ad+bc}{bd}\) (b,d &ne; 0)<br></div>
-									<div style="text-indent:20px;">\(\frac{a}{b} * \frac{c}{d} = \frac{ac}{bd}\); \(\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{bc}\) (b,d,c &ne; 0)<br></div>
-								</details>
-								<details style="text-indent:10px;">
-									<summary>Vorzeichenregeln:</summary>
-									<div style="text-indent:20px;">\( (-a)b = a(-b) = -ab \)<br></div>
-									<div style="text-indent:20px;">\( (-a)*(-b) = ab \)<br></div>
-								</details>
-								<details style="text-indent:10px;">
-									<summary>Erweitern/Kürzen</summary>
-									<div style="text-indent:20px;">\( \frac{ac}{bc} = \frac{a}{b} \) (b,c &ne; 0)<br></div>
-								</details>
-								<details style="text-indent:10px;">
-									<summary>Nullprodukt</summary>
-									<div style="text-indent:20px;"> ab = 0  &hArr;<br></div>
-									<div style="text-indent:20px;"> a = 0 oder b = 0<br></div>
-								</details><!-- 10px -->
-							</details>
-							<details>
-								<summary>Ungleichungen</summary>
-								Die reellen Zahlen sind ungeordnet, in dem Sinne, <br>
-								dass es eine "&lt;" (kleiner) Relation gibt, <br>
-								die folgende Eigenschaften besitzt:<br>
-								seien a,b,c &isin; &Ropf;
-								<details style="text-indent:10px;">
-									<summary>Trichotomie</summary>
-									Es gilt genau eine der Eigenschaften
-									<div style="text-indent:10px;">a &lt; b, a = b, a &gt; b</div>
-								</details>
-								<details style="text-indent:10px;">
-									<summary>Transitivit&auml;t</summary>
-									a &lt; b,&emsp; b &lt; c,&emsp; a &lt; c
-								</details>
-								<details style="text-indent:10px;">
-									<summary>Monotoniebez&uuml;glich</summary>
-									a &lt; b &rArr; ac &lt; bc f&uuml;r 0 &lt; c;
-								</details>
-								<details style="text-indent:10px;">
-									<summary></summary>
-								</details>
-								
-							</details><!-- 0px -->
-						</details><!-- Paragraf -->
-					</td>
-				</tr>
-			</table>
-		</p>
-		<script>			
-			function Bsp(Par){
-				var Beispiel = document.getElementById("Beispiel_"+Par)
-				if (Beispiel.hidden == true){
-					Beispiel.hidden = false
-				} else {
-					Beispiel.hidden = true
-				}
+<head>
+	<title>Analysis</title>
+	<link rel="icon" href="file:///C:/Users/Johnas/Desktop/Tree.png">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/x-mathjax-config">
+	  MathJax.Hub.Config({
+		extensions: ["tex2jax.js"],
+		jax: ["input/TeX","output/HTML-CSS"],
+		tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+	  });
+	</script>
+	<script type="text/javascript" src="https://LesserTreant.github.io/MathJax-master/MathJax.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+	<style>
+	.button {
+		background-color: #D2B48C;
+		border: none;
+		color: white;
+		padding: 16px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		transition-duration: 0.4s;
+		cursor: pointer;
+	}
+
+	.button1 {
+		background-color: white; 
+		color: black; 
+		border: 2px solid #D2B48C;
+	}
+
+	.button1:hover {
+		background-color: #D2B48C;
+		color: black;
+	}
+	
+	.break {
+		background-color: #CD853F;
+		border-color: #CD853F;
+		border-style: 2px solid;
+		border-radius: 12px;
+		offsetWidth: BreakScale(1);
+		text-indent:10px;
+	}
+	
+	.txt {
+		background-color: #D2B48C
+	}
+	
+	.txtlow {
+		border-left: 10px solid #CD853F;
+		background-color: #D2B48C;
+	}
+	
+	</style>
+</head>
+	
+	
+<body onresize="breaksc('kappa'); breaksc('KapName');breaksc('KapInhalt');">
+	<script>
+	document.body.style.backgroundColor = "#F5F5DC";
+	</script>
+	<button id="kap1" class="button button1" onlick=""><strong>Kapitel 1</strong></button>
+	<button id="kap2" class="button button1" onlick=""><strong>Kapitel 2</strong></button>
+		<br>
+	<button id="kap3" class="button button1" onlick=""><strong>Kapitel 3</strong></button>
+	<button id="kap4" class="button button1" onlick=""><strong>Kapitel 4</strong></button>
+		<br>
+	<div id="kappa" class="break"></div>	<!-- Break unter Kapitelbuttons -->
+		<br>
+	<div id="KapName" class="txt">Kapitelname</div>
+	<div id="KapInhalt" class="txtlow">es waren einmal sechs menschen die gingen einen berg hinab</div>
+	
+	
+	<script>
+	var bw = document.getElementsByTagName("BODY")[0];
+	function BreakScale(n){
+		var kap1 = document.getElementById("kap1");
+		var kap2 = document.getElementById("kap2");
+		if (n == 1){ //width
+			return kap1.offsetWidth + kap2.offsetWidth + 'px';
+		} else {	//height
+			return kap1.offsetWidth + kap2.offsetWidth;
+		}
+	}
+	
+	function Bsp(Par){
+		var Beispiel = document.getElementById("Beispiel_"+Par)
+		if (Beispiel.hidden == true){
+			Beispiel.hidden = false
+		} else {
+			Beispiel.hidden = true
+		}
+	}
+	function breaksc(Name){
+		if (Name == "kappa"){
+			if (bw.clientWidth > 282){
+				document.getElementById(Name).style.width = "282px";
+				document.getElementById(Name).style.height = "10px";
+			} else{
+				document.getElementById(Name).style.width = bw.clientWidth+"px";
+				document.getElementById(Name).style.height = "10px";
 			}
-		</script>
-		<details id="Beispiel_1" hidden>
-			<summary>
-				Beispiele - Paragraf 1
-			</summary>
-			<details>
-				<summary>i</summary>
-				<img id="B1" src="http://imgur.com/115wstE.png">
-			</details>
-			<details>
-				<summary>ii</summary>
-				<img id="B2" src="http://i.imgur.com/nTvTFUs.png">
-			</details>
-			<details>
-				<summary>iii</summary>
-				<img id="B3" src="http://i.imgur.com/VRewupo.png">
-			</details>
-			<details>
-				<summary><em>Bemerkung</em></summary>
-				<img id="B4" src="">
-			</details>
-		</details>
-		<p>
-		$x < y$ <br>
-		\( (1+x)^2\) <br>
-		\( \sqrt{3x-1} \) <br>
-		\(x^2 + y^2 = z^2\)
-		</p>
-	</body>
+		} else {
+			if (bw.clientWidth > 282){
+				var breite = 282 - document.getElementById(Name).clientLeft;
+				document.getElementById(Name).style.width = breite + "px";
+			} else{
+				var breite = bw.clientWidth - document.getElementById(Name).clientLeft;
+				document.getElementById(Name).style.width = breite+"px";
+			}
+		}
+	}
+	breaksc("kappa");
+	breaksc("KapName");
+	breaksc("KapInhalt");
+	//document.body.onresize = "breaksc()";
+	</script>
+</body>
 </html>
