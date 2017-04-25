@@ -15,11 +15,6 @@
 		</script>
 		<script type="text/javascript" src="https://LesserTreant.github.io/MathJax-master/MathJax.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-		<script>
-		$(document).ready(function(){
-			$("#div1").load("pap.txt");
-		});
-		</script>
 	</head>
 	<body>
 		<script>
@@ -52,18 +47,11 @@
 					</td>
 					<td>
 						<details>
-							<summary>
-								Das Prinzip der vollst&auml;ndigen Induktion
-							</summary>
-							- Methode um Aussagen &uuml;ber nat&uuml;rliche Zahlen (&Nopf;) <br>
-							<div style="text-indent:10px;">zu beweisen <br></div>
-							- Sei A(n) eine solche Aussage <br>
-							<div style="text-indent:10px;">&rArr;wenn denn gilt:<br></div>
-							<div style="text-indent:20px;">(1) A(1) ist richtig (Induktionsanfang)<br></div>
-							<div style="text-indent:20px;">(2) A(n+1) ist richtig (Induktionsschritt)<br></div>
-							<div style="text-indent:30px;">so ist A(n)richtig f&uuml;r alle n &isin; |N<br></div>
-							<div style="text-indent:30px;">(&forall; = f&uuml;r alle)<br></div>
-							<em onclick='Bsp(1)'>Beispiele</em><br>
+							<script>
+							$(document).ready(function(){
+								$("#div1").load("pap.txt");
+							});
+							</script>
 						</details>
 					</td>
 				</tr>
