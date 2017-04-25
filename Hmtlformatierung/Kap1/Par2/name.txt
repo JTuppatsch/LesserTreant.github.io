@@ -1,4 +1,4 @@
-
+<details>
 	<summary>
 		Das Prinzip der vollst&auml;ndigen Induktion
 	</summary>
@@ -11,3 +11,4 @@
 	<div style="text-indent:30px;">so ist A(n)richtig f&uuml;r alle n &isin; |N<br></div>
 	<div style="text-indent:30px;">(&forall; = f&uuml;r alle)<br></div>
 	<em onclick='Bsp(1)'>Beispiele</em><br>
+</details>

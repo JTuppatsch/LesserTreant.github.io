@@ -48,14 +48,17 @@
 		border-style: 2px solid;
 		border-radius: 12px;
 		offsetWidth: BreakScale(1);
-		text-indent:10px;
 	}
 	
 	.txt {
+		font-size: 18px;
+		text-indent: 3px;
+		color: white;
 		background-color: #D2B48C
 	}
 	
 	.txtlow {
+		color: white;
 		border-left: 10px solid #CD853F;
 		background-color: #D2B48C;
 	}
@@ -64,24 +67,38 @@
 </head>
 	
 	
-<body onresize="breaksc('kappa'); breaksc('KapName');breaksc('KapInhalt');">
+<body onresize="breaksc(['kappa','KapName','KapInhalt','kappa2','ParName','ParInhalt']);">
 	<script>
 	document.body.style.backgroundColor = "#F5F5DC";
 	</script>
-	<button id="kap1" class="button button1" onlick=""><strong>Kapitel 1</strong></button>
-	<button id="kap2" class="button button1" onlick=""><strong>Kapitel 2</strong></button>
-		<br>
-	<button id="kap3" class="button button1" onlick=""><strong>Kapitel 3</strong></button>
-	<button id="kap4" class="button button1" onlick=""><strong>Kapitel 4</strong></button>
+	<button id="kap1" class="button button1" onlick="Kapitel(1)"><strong>Kapitel 1</strong></button>
+	<button id="kap2" class="button button1" onlick="Kapitel(2)"><strong>Kapitel 2</strong></button>
+	<button id="kap3" class="button button1" onlick="Kapitel(3)"><strong>Kapitel 3</strong></button>
+	<button id="kap4" class="button button1" onlick="Kapitel(4)"><strong>Kapitel 4</strong></button>
 		<br>
 	<div id="kappa" class="break"></div>	<!-- Break unter Kapitelbuttons -->
 		<br>
 	<div id="KapName" class="txt">Kapitelname</div>
 	<div id="KapInhalt" class="txtlow">es waren einmal sechs menschen die gingen einen berg hinab</div>
+	<button id="Par1" class="button button1" onlick=""><strong>Paragraph 1</strong></button>
+	<button id="Par2" class="button button1" onlick=""><strong>Paragraph 2</strong></button>
+	<button id="Par3" class="button button1" onlick=""><strong>Paragraph 3</strong></button>
+	<button id="Par4" class="button button1" onlick=""><strong>Paragraph 4</strong></button>
+		<br>
+	<div id="kappa2" class="break"></div>	<!-- Break unter Paragraphbuttons -->
+		<br>
+	<div id="ParName" class="txt">Paragraphname</div>
+	<div id="ParInhalt" class="txtlow">es waren einmal sechs menschen die gingen einen berg hinab</div>
 	
 	
 	<script>
+	var Kap="Kap1",
+		Par=Kap + "/Par1",
+		Sub=Par + "/Sub1";
+	
 	var bw = document.getElementsByTagName("BODY")[0];
+	var d = ["kappa","KapName","KapInhalt","kappa2","ParName","ParInhalt"];
+	
 	function BreakScale(n){
 		var kap1 = document.getElementById("kap1");
 		var kap2 = document.getElementById("kap2");
@@ -92,37 +109,39 @@
 		}
 	}
 	
-	function Bsp(Par){
-		var Beispiel = document.getElementById("Beispiel_"+Par)
-		if (Beispiel.hidden == true){
-			Beispiel.hidden = false
-		} else {
-			Beispiel.hidden = true
-		}
-	}
 	function breaksc(Name){
-		if (Name == "kappa"){
-			if (bw.clientWidth > 282){
-				document.getElementById(Name).style.width = "282px";
-				document.getElementById(Name).style.height = "10px";
-			} else{
-				document.getElementById(Name).style.width = bw.clientWidth+"px";
-				document.getElementById(Name).style.height = "10px";
-			}
-		} else {
-			if (bw.clientWidth > 282){
-				var breite = 282 - document.getElementById(Name).clientLeft;
-				document.getElementById(Name).style.width = breite + "px";
-			} else{
-				var breite = bw.clientWidth - document.getElementById(Name).clientLeft;
-				document.getElementById(Name).style.width = breite+"px";
+		for (var i = 0; i < Name.length; i++){
+			if (Name[i] == "kappa" || Name[i] == "kappa2"){
+				if (bw.clientWidth > 570){
+					document.getElementById(Name[i]).style.width = "570px";
+					document.getElementById(Name[i]).style.height = "10px";
+				} else{
+					document.getElementById(Name[i]).style.width = bw.clientWidth+"px";
+					document.getElementById(Name[i]).style.height = "10px";
+				}
+			} else {
+				if (bw.clientWidth > 570){
+					var breite = 570 - document.getElementById(Name[i]).clientLeft;
+					document.getElementById(Name[i]).style.width = breite + "px";
+				} else {
+					var breite = bw.clientWidth - document.getElementById(Name[i]).clientLeft;
+					document.getElementById(Name[i]).style.width = breite+"px";
+				}
 			}
 		}
 	}
-	breaksc("kappa");
-	breaksc("KapName");
-	breaksc("KapInhalt");
+	breaksc(d);
+	
+	function Kapitel(Nummer){
+		Kap = "Kap" + Nummer;
+		$(document).ready(function(){
+			$("KapName").load(Kap+"/Name.txt");
+			$("KapInhalt").load(Kap+"/UnderName.txt");
+		});
+	}
 	//document.body.onresize = "breaksc()";
+	
+	
 	</script>
 </body>
 </html>
