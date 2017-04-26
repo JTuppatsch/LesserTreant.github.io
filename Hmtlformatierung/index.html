@@ -143,6 +143,7 @@
 			$("#ParCount").load(Kap+"/ParInfo.txt");
 		});
 		ParZahl(document.getElementById("ParCount").innerHTML);
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 	}
 	
 	function Para(Nummer){
@@ -152,6 +153,7 @@
 			$("#ParName").load(Par+"/Name.txt");
 			$("#ParInhalt").load(Par+"/inhalt.txt");
 		});
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 	}
 	
 	function ParZahl(Nummer){
@@ -164,6 +166,6 @@
 	}
 	//document.body.onresize = "breaksc()";
 	</script>
-	<p id="ParCount" hidden>5</p>
+	<p id="ParCount" hidden>2</p>
 </body>
 </html>
