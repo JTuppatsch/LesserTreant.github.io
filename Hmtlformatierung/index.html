@@ -42,6 +42,19 @@
 		color: black;
 	}
 	
+	.button2 {
+		font-size: 12px;
+		padding: 8px 16px;
+		background-color: white; 
+		color: black; 
+		border: 2px solid #D2B48C;
+	}
+
+	.button2:hover {
+		background-color: #D2B48C;
+		color: black;
+	}
+	
 	.break {
 		background-color: #CD853F;
 		border-color: #CD853F;
@@ -91,6 +104,9 @@
 		<br>
 	<div id="ParName" class="txt">Paragraphname</div>
 	<div id="ParInhalt" class="txtlow">es waren einmal sechs menschen die gingen einen berg hinab</div>
+		<br>
+		<br>
+	<button id="" class="button button2" onclick="MathScRe()">Reload MathScript</button>
 	
 	
 	<script>
@@ -163,6 +179,10 @@
 		for (var i = 1; i <= Nummer; i++){
 			document.getElementById("Par"+i).style = "display: initial";
 		}
+	}
+	
+	function MathScRe(){
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 	}
 	//document.body.onresize = "breaksc()";
 	</script>
