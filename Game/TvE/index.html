@@ -1,0 +1,227 @@
+<html>
+	<head>
+		<title>Troll vs Elves</title>
+	<style>
+	.button {
+		background-color: #D2B48C;
+		border: none;
+		color: white;
+		padding: 16px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		transition-duration: 0.4s;
+		cursor: pointer;
+	}
+
+	.button1 {
+		background-color: white; 
+		color: black; 
+		border: 2px solid #D2B48C;
+	}
+
+	.button1:hover {
+		background-color: #D2B48C;
+		color: black;
+	}
+	</style>
+	</head>
+	<body>
+		<script>
+		document.body.style.backgroundColor = "#F5F5DC";
+		</script>
+		<button id="kap1" class="button button1" onclick="Timerdiff(1); Timer()">1 sec</button>
+		<button id="kap2" class="button button1" onclick="Timerdiff(10); Timer()">10 sec</button>
+		<button id="kap2" class="button button1" onclick="Timerdiff(1); setInterval(Timer, 10);">Automatisch</button>
+		<script>
+			var	Time = 0,
+				Gold = 30, Holz = 0,
+				Stein = 0,
+				sec = 1,
+				einkommen = 1, UpcostGold = 0, UpcostHolz = 0, lvl = 0,
+				AnforderungBld,	Anforderunglvl, Holzkost = 150, gfh = 0;
+				
+				function Timerdiff(sec){
+					this.sec = sec;
+				}
+				
+				function Timer(){
+					for (var i = 0; i < sec; i++){
+						Timerup(1);
+						if (Gm.lvl == 10){
+							document.getElementById("kap1").disabled = true;
+							document.getElementById("kap2").disabled = true;
+							clearInterval(1);
+							break;
+						}
+					}
+				}
+				
+				function Timerup(Zeit){
+					Time = Time + Zeit;
+					Gold = Gold + (Gm.einkommen*Zeit);
+					if (AnforderungBld[Gm.lvl].lvl == Anforderunglvl[Gm.lvl]){
+						if (Holz < Gm.UpcostHolz && Gold >= Holzkost){
+							Holz += 10;
+							Gold -= Holzkost;
+							gfh += Holzkost;
+							Holzkost += 5;
+						}
+						if (Gold >= Gm.UpcostGold && Holz >= Gm.UpcostHolz){
+							Gold -= Gm.UpcostGold;
+							Holz -= Gm.UpcostHolz;
+							
+							Gm.lvl += 1;
+							Gm.UpcostGold *=2;
+							Gm.UpcostHolz *= 2;
+							Gm.einkommen *= 2;
+						}
+					} else {
+						if (Holz < AnforderungBld[Gm.lvl].UpcostHolz && Gold >= Holzkost){
+							Holz += 10;
+							Gold -= Holzkost;
+							gfh += Holzkost;
+							Holzkost += 5;
+						}
+						if (Gold >= AnforderungBld[Gm.lvl].UpcostGold && Holz >= AnforderungBld[Gm.lvl].UpcostHolz){
+							Gold -= AnforderungBld[Gm.lvl].UpcostGold;
+							Holz -= AnforderungBld[Gm.lvl].UpcostHolz;
+							
+							AnforderungBld[Gm.lvl].lvl += 1;
+							AnforderungBld[Gm.lvl].UpcostGold *= 2;
+							AnforderungBld[Gm.lvl].UpcostHolz *= 2;
+							if (AnforderungBld[Gm.lvl] == trader){
+								AnforderungBld[Gm.lvl].UpcostGold *= 2;
+							}
+						}
+					}
+					
+					if(Gm.lvl == 5 && Gm.UpcostHolz == 0){
+						Gm.UpcostHolz = 32;
+					}
+					if(rock.lvl == 10 && rock.UpcostHolz == 0){
+						rock.UpcostHolz = 32;
+					}
+					
+					if(Time%60 < 10){
+						var Zeit = Math.floor(Time/60) + ":0" + Time%60;
+					} else {
+						var Zeit = Math.floor(Time/60) + ":" + Time%60;
+					}
+					document.getElementById("Zeit").innerHTML = Zeit;
+					document.getElementById("Gold").innerHTML = Gold;
+					document.getElementById("Holz").innerHTML = Holz;
+					document.getElementById("Goldminelvl").innerHTML = "Level " + Gm.lvl;
+					document.getElementById("income").innerHTML = "Einkommen: " + Gm.einkommen + "/s";
+					document.getElementById("Rocklvl").innerHTML = "Level " + rock.lvl;
+					document.getElementById("Traderlvl").innerHTML = "Level " + trader.lvl;
+				}
+				
+				function Goldmine(UpcostGold, UpcostHolz, einkommen, lvl, Anforderung){
+					this.UpcostGold = UpcostGold;
+					this.UpcostHolz = UpcostHolz;
+					this.einkommen = einkommen;
+					this.lvl = lvl;
+					this.Anforderung = Anforderung;
+				}
+				
+				function Rock(UpcostGold, UpcostHolz, lvl){
+					this.UpcostGold = UpcostGold;
+					this.UpcostHolz = UpcostHolz;
+					this.lvl = lvl;
+				}
+				
+				function Trader(UpcostGold, lvl){
+					this.UpcostGold = UpcostGold;
+					this.UpcostHolz = UpcostHolz;
+					this.lvl = lvl;
+				}
+				
+				var Gm = new Goldmine(50,0,1,1);
+				var rock = new Rock(4,0,0);
+				var trader = new Trader(64,0,0);			
+				AnforderungBld = [true, rock, rock, rock, trader, rock, trader, rock, rock, rock];
+				Anforderunglvl = [true, 0, 1, 4, 1, 6, 2, 11, 12, 13];
+				
+		</script>
+		<table style="background-color: #D2B48C;">
+			<tr>
+				<td>
+				<div>Time: </div>
+				</td>
+				<td>
+				<div id="Zeit">0:00</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<div>Gold: </div>
+				</td>
+				<td>
+				<div id="Gold">30</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<div>Holz: </div>
+				</td>
+				<td>
+				<div id="Holz">0</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<div>Goldmine: </div>
+				</td>
+				<td>
+				<div id="Goldminelvl">Level 1</div>
+				</td>
+				<td>
+				<div id="income">Einkommen: 1/s</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<div>Stein: </div>
+				</td>
+				<td>
+				<div id="Rocklvl">Level 0</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<div>Trader: </div>
+				</td>
+				<td>
+				<div id="Traderlvl">Level 0</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
+	<!-- 1x
+	Goldmine	1		2		4		8		16		32		64		128		256		512
+		Gold:	0		50		100		200		400		800		1600	3200	6400	12800
+		Holz:	0		0		0		0		0		32		64		128		256		512
+						Rock(1)	Rock(4)	Trader	Rock(6)	Trader2	Rock(11)Rock(12)Rock(13)
+	
+	Rock		1		2		3		4		5		6		7		8		9		10		11		12		13		14		15
+		Gold:	4		8		16		32		64		128		256		512		1024	2048	4096	8192	16384	32768	
+		Holz:	0		0		0		0		0		0		0		0		0		0		32		64		128		256		512
+	
+	Trader		1		2		3
+		Gold:	64		256		1024
+	
+	Ench		1
+		Gold:	256
+		
+	WhispH		1		2		3		4		5		6		7
+		Gold:	512		1024	2048	4096	20480	81920	262144
+		Holzin:	1/8		1/4		1/2		1		6		36		216
+		
+	WhispG		1		2		3		4		5		6		7
+		Holz:	32		256		1024	4096	16384	65536	262144			
+		Goldin:	1		8		32		128		512		2048	8192
+	-->
