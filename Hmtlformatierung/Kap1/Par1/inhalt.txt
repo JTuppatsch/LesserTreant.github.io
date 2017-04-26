@@ -1,0 +1,7 @@
+Vollständige induktion ist eine Methode um Aussagen &uuml;ber nat&uuml;rliche Zahlen (&Nopf;) zu beweisen.<br>
+Sei A(n) eine solche Aussage: <br>
+&rArr;wenn denn gilt:<br>
+<div style="text-indent:10px;">(1) A(1) ist richtig (Induktionsanfang)<br></div>
+<div style="text-indent:10px;">(2) A(n+1) ist richtig (Induktionsschritt)<br></div>
+<div style="text-indent:20px;">so ist A(n)richtig f&uuml;r alle n &isin; |N<br></div>
+<div style="text-indent:20px;">(&forall; = f&uuml;r alle)<br></div>
