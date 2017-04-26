@@ -44,7 +44,7 @@ Im folgenden werden die wichtigsten Eigenschaften der Reellen Zahlen (&Ropf;) De
 			<div style="text-indent:30px;">f&uuml;r a &isin; &Ropf;, a &ne; 0 &exist; \(\frac{1}{a}\) (=\(a^{-1}\)) mit</div>
 			<div style="text-indent:30px;">\(a*\frac{1}{a}= 1\) </div>
 			<div style="text-indent:30px;">dann definiere man den Quotionten</div>
-			<div style="text-indent:30px;">\(\frac{a}{b}:= a*\frac{1}{b}\) &emsp; für b &ne; 0 </div>
+			<div style="text-indent:30px;">\(\frac{a}{b}:= a*\frac{1}{b}\) &emsp; fÃ¼r b &ne; 0 </div>
 		</details>
 		<details style="text-indent:10px;">
 			<summary>Distributivgesetz</summary>
@@ -66,7 +66,7 @@ Im folgenden werden die wichtigsten Eigenschaften der Reellen Zahlen (&Ropf;) De
 		<div style="text-indent:20px;">\( (-a)*(-b) = ab \)<br></div>
 	</details>
 	<details style="text-indent:10px;">
-		<summary>Erweitern/Kürzen</summary>
+		<summary>Erweitern/K&uuml;rzen</summary>
 		<div style="text-indent:20px;">\( \frac{ac}{bc} = \frac{a}{b} \) (b,c &ne; 0)<br></div>
 	</details>
 	<details style="text-indent:10px;">
