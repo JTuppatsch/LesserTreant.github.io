@@ -80,10 +80,12 @@
 		<br>
 	<div id="KapName" class="txt">Kapitelname</div>
 	<div id="KapInhalt" class="txtlow">es waren einmal sechs menschen die gingen einen berg hinab</div>
-	<button id="Par1" class="button button1" onclick=""><strong>Paragraph 1</strong></button>
-	<button id="Par2" class="button button1" onclick=""><strong>Paragraph 2</strong></button>
-	<button id="Par3" class="button button1" onclick=""><strong>Paragraph 3</strong></button>
-	<button id="Par4" class="button button1" onclick=""><strong>Paragraph 4</strong></button>
+	<button id="Par1" class="button button1" onclick="Para(1)"><strong>Paragraph 1</strong></button>
+	<button id="Par2" class="button button1" onclick="Para(2)"><strong>Paragraph 2</strong></button>
+	<button id="Par3" class="button button1" onclick="Para(3)"><strong>Paragraph 3</strong></button>
+	<button id="Par4" class="button button1" onclick="Para(4)"><strong>Paragraph 4</strong></button>
+	<button id="Par5" class="button button1" onclick="Para(5)"><strong>Paragraph 5</strong></button>
+	<button id="Par6" class="button button1" onclick="Para(6)"><strong>Paragraph 6</strong></button>
 		<br>
 	<div id="kappa2" class="break"></div>	<!-- Break unter Paragraphbuttons -->
 		<br>
@@ -134,15 +136,34 @@
 	
 	function Kapitel(Nummer){
 		Kap = "Kap" + Nummer;
-		console.log("hi")
+		console.log("hi");
 		$(document).ready(function(){
 			$("#KapName").load(Kap+"/Name.txt");
 			$("#KapInhalt").load(Kap+"/UnderName.txt");
+			$("#ParCount").load(Kap+"/ParInfo.txt");
+		});
+		ParZahl(document.getElementById("ParCount").innerHTML);
+	}
+	
+	function Para(Nummer){
+		Par = Kap + "/Par" + Nummer;
+		console.log("hi");
+		$(document).ready(function(){
+			$("#ParName").load(Par+"/Name.txt");
+			$("#ParInhalt").load(Par+"/inhalt.txt");
 		});
 	}
+	
+	function ParZahl(Nummer){
+		for (var i = 1; i <= 6; i++){
+			document.getElementById("Par"+i).style = "display: none";
+		}
+		for (var i = 1; i <= Nummer; i++){
+			document.getElementById("Par"+i).style = "display: initial";
+		}
+	}
 	//document.body.onresize = "breaksc()";
-	
-	
 	</script>
+	<p id="ParCount" hidden>2</p>
 </body>
 </html>
