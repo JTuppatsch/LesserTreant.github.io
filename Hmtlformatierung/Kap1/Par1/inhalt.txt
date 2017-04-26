@@ -1,4 +1,4 @@
-Vollständige induktion ist eine Methode um Aussagen &uuml;ber nat&uuml;rliche Zahlen (&Nopf;) zu beweisen.<br>
+Vollst&auml;ndige induktion ist eine Methode um Aussagen &uuml;ber nat&uuml;rliche Zahlen (&Nopf;) zu beweisen.<br>
 Sei A(n) eine solche Aussage: <br>
 &rArr;wenn denn gilt:<br>
 <div style="text-indent:10px;">(1) A(1) ist richtig (Induktionsanfang)<br></div>
